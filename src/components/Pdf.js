@@ -17,15 +17,28 @@ export default function Pdf() {
       <p className="text-center my-3">Page {pageNumber} of {numPages}</p>
       <div className="flex mb-3">
         {pageNumber > 1 &&
-            <button className="flex-auto bg-green-200 hover:bg-green-400 mx-1 p-1 rounded" onClick={() => setPageNumber(pageNumber - 1)}>
+            <button className="flex-1 bg-green-200 hover:bg-green-400 mx-1 p-1 rounded" onClick={() => setPageNumber(pageNumber - 1)}>
               Previous page
             </button>
         }    
         <button 
-          className="flex-auto bg-green-200 hover:bg-green-400 mx-1 p-1 rounded"          
+          className="flex-1 bg-green-200 hover:bg-green-400 mx-1 p-1 rounded"          
           onClick={() => setPageNumber(pageNumber + 1)}
           >
           Next page
+        </button>
+      </div>
+      <div className="flex justify-center mb-3">
+        <button 
+          className="flex-1 max-w-xs bg-gray-200 hover:bg-gray-400 mx-1 p-1 rounded" 
+          onClick={() => setPageZoom(pageZoom - .25)}>
+          -
+        </button>        
+        <button 
+          className="flex-1 max-w-xs bg-gray-200 hover:bg-gray-400 mx-1 p-1 rounded"          
+          onClick={() => setPageZoom(pageZoom + .25)}
+          >
+          +
         </button>
       </div>
       <Document    
