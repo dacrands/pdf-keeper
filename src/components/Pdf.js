@@ -25,9 +25,9 @@ export default function Pdf() {
 
   return (
     <div style={{outline: '1px solid red', overflowY: 'hidden'}}>
-      <div style={{maxWidth:'150px'}}>
+      <div style={{maxWidth:'250px', margin: "0 auto", display:"grid", gridTemplateColumns: "100px 150px", alignItems: "center"}}>
       <span>Go to page: </span>
-      <Select         
+      <Select        
         options={pageNumberArr}
         defaultValue={{ value: pageNumber, label: pageNumber }}
         onChange={onPageSelectChange}
@@ -63,7 +63,7 @@ export default function Pdf() {
         </button>
       </div>
       <Document    
-        file={algos}
+        file={compilers}
         onLoadSuccess={onDocumentLoadSuccess}
         >       
             <Page scale={pageZoom} pageNumber={pageNumber} />       
