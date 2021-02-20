@@ -1,6 +1,15 @@
 .pdf-grid {  
   display: grid;
-  grid-template-columns: 600px 1fr;
-  grid-auto-rows: calc(100vh - 104px);
+  grid-template-columns: 150px 1fr;
+  grid-auto-rows: calc(100vh - 60px);
 }
 
+.react-pdf__Page {
+  max-height: calc(100vh - 200px);
+  overflow: scroll;  
+}
+
+.react-pdf__Page__canvas {
+  margin: 0 auto;
+  overflow: hidden;
+}
