@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import Select from 'react-select'
 import algos from '../docs/algos.pdf'
+import compilers from '../docs/Compilers.pdf'
 import { Document, Page, pdfjs } from "react-pdf";
+import ZoomBtns from "./ZoomBtns"
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
 
@@ -49,19 +51,7 @@ export default function Pdf() {
           Next page
         </button>
       </div>
-      <div className="flex justify-center mb-3">
-        <button 
-          className="flex-1 max-w-xs bg-gray-200 hover:bg-gray-400 mx-1 p-1 rounded" 
-          onClick={() => setPageZoom(pageZoom - .25)}>
-          -
-        </button>        
-        <button 
-          className="flex-1 max-w-xs bg-gray-200 hover:bg-gray-400 mx-1 p-1 rounded"          
-          onClick={() => setPageZoom(pageZoom + .25)}
-          >
-          +
-        </button>
-      </div>
+      <ZoomBtns pageZoom={pageZoom} setPageZoom={setPageZoom} />
       <Document    
         file={compilers}
         onLoadSuccess={onDocumentLoadSuccess}
