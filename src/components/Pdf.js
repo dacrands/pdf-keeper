@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Select from 'react-select'
 import algos from '../docs/algos.pdf'
 import compilers from '../docs/Compilers.pdf'
 import { Document, Page, pdfjs } from "react-pdf";
